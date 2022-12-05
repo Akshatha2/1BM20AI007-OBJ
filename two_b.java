@@ -1,77 +1,103 @@
-abstract class shape{
-double area;
-abstract void cal_area();
-abstract void display();
-}
-class triangle extends shape{
-int b,h;
-triangle(int x,int y)
-{b=x;
-h=y;
-}
-void cal_area(){
-area = 0.5*b*h;
-}
-void display()
+abstract class shape
 {
-System.out.println("Area of triangle= "+area);
-}
-}
-class circle extends shape{
-int r;
-circle(int x)
-{
-r=x;
-}
-void cal_area(){
-area = 3.14*r*r;
-}
-void display()
-{
-System.out.println("Area of circle= "+area);
-}
-}
-class hexagon extends shape{
-int s;
-hexagon(int x)
-{
-s=x;
-}
-void cal_area(){
-area = 2.6*s*s;
-}
-void display()
-{
-System.out.println("Area of hexagon= "+area);
-}
-}
-class sphere extends circle{
-sphere(int x)
-{
-super(x);
-}
-void cal_area(){
-area = 4*3.14*r*r;
-}
-void display()
-{
-System.out.println("Area of Sphere= "+area);
-}
+  double a;
+  abstract void display();
 }
 
-class two_b{
-public static void main(String args[])
-{triangle t = new triangle(3,4);
-t.cal_area();
-t.display();
-circle c = new circle(5);
-c.cal_area();
-c.display();
-hexagon h = new hexagon(10);
-h.cal_area();
-h.display();
-sphere s = new sphere(8);
-s.cal_area();
-s.display();
+class triangle extends shape
+{
+  int b,h;
+  
+  triangle(int x,int y)
+  {
+    b=x;
+    h=y;
+  }
+  
+  void area1()
+  {
+    a=0.5*b*h;
+  }
+  
+  void display()
+  {
+    System.out.println("Area of Triangle="+a);
+  }
 }
+
+class circle extends shape
+{
+  protected int r;
+  
+  circle(int n)
+  {
+    r=n;
+  }
+  
+  void area2()
+  {
+    a=3.14*r*r;
+  }
+  
+  void display()
+  {
+    System.out.println("Area of Circle="+a);
+  }
 }
+
+class hexagon extends shape
+{
+  int s;
+  hexagon(int m)
+  {
+    s=m;
+  }
+  
+  void area3()
+  {
+    a=2.6*s*s;
+  }
+  
+  void display()
+  {
+    System.out.println("Area of Hexagon="+a);
+  }
+}
+
+class threeDcircle extends circle
+{ 
+  threeDcircle(int o)
+  {
+    super(o);
+  }
+    
+  void area4()
+  {
+    a=4*3.14*r*r;
+  }
+  
+  void display()
+  {
+    System.out.println("Volume of sphere="+a);
+  }
+}
+
+class two_b
+{
+  public static void main(String args[])
+  {
+    triangle t=new triangle(5,10);
+    circle c=new circle(5);
+    hexagon h=new hexagon(10);
+    threeDcircle tc=new threeDcircle(15);
+    t.area1();
+    t.display();
+    c.area2();
+    c.display();
+    h.area3();
+    h.display();
+    tc.area4();
+    tc.display();
+  }
+}
+ 

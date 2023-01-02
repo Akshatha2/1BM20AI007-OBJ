@@ -1,14 +1,14 @@
 import java.util.*;
 import java.lang.*;
 
-class tests1
+class calculator
 {
   public static void main(String args[])
   {
    int a,b;
    double c;
    Scanner obj=new Scanner(System.in);
-   System.out.println("Welcome to Calculator App");
+   System.out.println("Welcome to Calculator");
    while(true)
    {
      System.out.println("Enter 1 for addition");
